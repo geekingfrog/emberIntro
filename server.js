@@ -6,21 +6,22 @@ var server = express();
 
 var createItem = function() {
   var id = 0;
-  return function(name, description, price) {
+  return function(name, description, price, img) {
     return {
       id: id++,
       name: name,
       description: description,
-      price: price
+      price: price,
+      img_url: img
     };
   }
 }();
 
-var cakes = [ createItem('Cupcake', 'Small and good', 100),
-  createItem('Cheescake', 'Popular except in France', 120),
-  createItem('Macaron', 'Sophisticated desert', 300),
-  createItem('Brownie', "You can't go wrong with this one", 75),
-  createItem('Waffle', "Belgium's best invention", 80)
+var cakes = [ createItem('Cupcake', 'Small and good', 100, '/img/cupcake.jpg'),
+  createItem('Cheesecake', 'Popular except in France', 120, '/img/cheesecake.jpg'),
+  createItem('Macaron', 'Sophisticated desert', 300, '/img/macaron.jpg'),
+  createItem('Brownie', "You can't go wrong with this one", 75, '/img/brownie.jpg'),
+  createItem('Waffle', "Belgium's best invention", 80, '/img/waffle.jpg')
 ];
 
 server.get('/cakes', function(req, res) { res.send(cakes); });
@@ -42,3 +43,4 @@ server.use(express.directory(__dirname));
 server.use(express.static(__dirname));
 
 server.listen(8000);
+console.log("Server up and listening on port 8000");

@@ -12,6 +12,12 @@ App.ApplicationRoute = Ember.Route.extend({
   }
 });
 
+App.IndexRoute = Ember.Route.extend({
+  redirect: function() {
+    this.transitionTo('cakes');
+  }
+});
+
 App.CakesRoute = Ember.Route.extend({
   model: function() { return App.Cake.findAll(); }
 });
