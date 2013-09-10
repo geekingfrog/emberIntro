@@ -1,0 +1,10 @@
+{
+  "name": "emberIntro",
+  "version": "0.0.0",
+  "description": "Small introduction for Ember.js",
+  "author": "Grégoire Charvet a.k.a geekingfrog",
+  "dependencies": {
+    "lodash": "~1.3.1",
+    "express": "~3.4.0"
+  }
+}
