@@ -6,20 +6,21 @@ var server = express();
 
 var createItem = function() {
   var id = 0;
-  return function(name, description) {
+  return function(name, description, price) {
     return {
       id: id++,
       name: name,
-      description: description
+      description: description,
+      price: price
     };
   }
 }();
 
-var cakes = [ createItem('Cupcake', 'Small and good'),
-  createItem('Cheescake', 'Popular except in France'),
-  createItem('Macaron', 'Sophisticated desert'),
-  createItem('Brownie', "You can't go wrong with this one"),
-  createItem('Waffle', "Belgium's best invention")
+var cakes = [ createItem('Cupcake', 'Small and good', 100),
+  createItem('Cheescake', 'Popular except in France', 120),
+  createItem('Macaron', 'Sophisticated desert', 300),
+  createItem('Brownie', "You can't go wrong with this one", 75),
+  createItem('Waffle', "Belgium's best invention", 80)
 ];
 
 server.get('/cakes', function(req, res) { res.send(cakes); });

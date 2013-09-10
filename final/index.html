@@ -6,15 +6,71 @@
   <title>Emberjs intro</title>
   <link rel="stylesheet" href="../lib/css/normalize.css"/>
   <link rel="stylesheet" href="../lib/css/foundation.css"/>
+  <link rel="stylesheet" href="../lib/css/emberIntro.css"/>
   
   </head>
 
   <body>
 
     <script type="text/x-handlebars" data-template-name="application">
-    <h1>Hello ember !</h1>
+      <header>
+      <h1>OmNom bakery</h1>
+      </header>
+      <div class="row">
+      {{ outlet }} 
+      </div>
     </script>
 
+    <script type="text/x-handlebars" data-template-name="cakes">
+      <div class="large-4 columns">
+        List of yummy stuff to be happy (and probably fat too).
+
+        <ul class="no-bullet cakes">
+          {{#each cake in controller}}
+          <li>
+          {{#linkTo 'cake' cake}}
+          {{cake.name}}
+          {{/linkTo}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="large-8 columns">
+        {{ outlet }} 
+        <hr />
+        {{ render chart }} 
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="cakes/index">
+      <div class="panel">Please select a cake first.</div>
+    </script>
+
+
+    <script type="text/x-handlebars" data-template-name="cake">
+      <h2>{{name}}</h2>
+      <p>
+      {{ description }}
+      </p>
+      <div class="button" {{ action orderCake }} >
+        Do want !
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="chart">
+      {{#if content.length}}
+      <ul class="pricing-table">
+        <li class="title">Your order</li>
+        {{#each cake in controller}}
+        <li class="bullet-item">{{cake.name}} ({{price cake.price}})</li>
+        {{/each}}
+        <li class="price">Total: {{price totalPrice}}</li>
+      </ul>
+      {{else}}
+      You haven't selected any cake yet, what are you waiting for?
+      {{/if}}
+    </script>
 
     <script src="../lib/js/jquery-2.0.3.js" type="text/javascript" charset="utf-8"></script>
     <script src="../lib/js/handlebars-1.0.0.js" type="text/javascript" charset="utf-8"></script>

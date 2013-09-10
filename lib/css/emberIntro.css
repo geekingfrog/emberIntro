@@ -1,0 +1,19 @@
+header {
+  background: rgb(210, 210, 210);
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+ul {
+  margin: .5em;
+}
+
+.cakes a {
+  display: inline-block;
+  width: 100%;
+}
+
+.cakes a.active, a:hover {
+  background: rgb(230, 230, 230);
+}
