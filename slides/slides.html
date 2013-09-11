@@ -1,215 +1,228 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Intro to Ember.js</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Intro to Ember.js</title>
 
-<!-- Don't alter this, CSSS needs it to work -->
-<link href="slideshow.css" rel="stylesheet" />
+    <!-- Don't alter this, CSSS needs it to work -->
+    <link href="slideshow.css" rel="stylesheet" />
 
-<!-- Theme-specific styles go here (themes can be reused in multiple talks) -->
-<link href="theme.css" rel="stylesheet" />
+    <!-- Theme-specific styles go here (themes can be reused in multiple talks) -->
+    <link href="theme.css" rel="stylesheet" />
 
-<!-- Talk-specific styles go here -->
-<link href="talk.css" rel="stylesheet" />
+    <!-- Talk-specific styles go here -->
+    <link href="talk.css" rel="stylesheet" />
 
-<!-- Take care of prefixes -->
-<script src="prefixfree.min.js"></script>
+    <!-- Take care of prefixes -->
+    <script src="prefixfree.min.js"></script>
 
-</head>
-<body>
+  </head>
+  <body>
 
-<header id="intro" class="slide">
-	<!-- <h1>Introduction to Ember.js</h1> -->
-  <h1>
-    <object data="img/emberLogo.png" type="image/png" >
-      <img src="img/emberLogo.png" alt="Ember.js" />
-    </object>
-  </h1>
-	<p class="attribution">By Grégoire Charvet</p>
-</header>
+    <header id="intro" class="slide">
+    <!-- <h1>Introduction to Ember.js</h1> -->
+    <h1>
+      <object data="img/emberLogo.png" type="image/png" >
+        <img src="img/emberLogo.png" alt="Ember.js" />
+      </object>
+    </h1>
+    <p class="attribution">By Grégoire Charvet</p>
+    </header>
 
-<section>
-	<header class="slide">
-		<h1>Introduction to Ember.js</h1>
-	</header>
-	
-	<section class="slide">
-		<h2>Ember.js is not Ruby on Rails</h2>
+    <section>
+    <header class="slide">
+    <h1>Introduction to Ember.js</h1>
+    </header>
+
+    <section class="slide">
+    <h2>Ember.js is not Ruby on Rails</h2>
     <p>Ember.js is not a server</p>
-		<p>MVC in the sense of desktop application</p>
-	</section>
+    <p>MVC in the sense of desktop application</p>
+    </section>
 
-  <section class="slide">
-  <h2>Major concepts in Ember.js</h2>
-  <p>
-  <ul>
-    <li>Router: Matches the url to an application state.</li>
-    <li>Controller: Handles actions and gives data to the views.</li>
-    <li>Views: Handles users actions (like click).</li>
-    <li>Models: Handle communication with the server (store, retrieve, modify).</li>
-    <li>Templates: Describe html output</li>
-  </ul>
-  </p>
-  </section>
+    <section class="slide">
+    <h2>Major concepts in Ember.js</h2>
+    <p>
+    <ul>
+      <li>Router: Matches the url to an application state.</li>
+      <li>Controller: Handles actions and gives data to the views.</li>
+      <li>Views: Handles users actions (like click).</li>
+      <li>Models: Handle communication with the server (store, retrieve, modify).</li>
+      <li>Templates: Describe html output</li>
+    </ul>
+    </p>
+    </section>
 
-  <section class="slide">
-  <h2>Some things to note</h2>
-  <p>
-  <ul>
-    <li>Ember can generate a lot of code for you (in memory code).</li>
-    <li><a href="http://emberjs.com/guides/concepts/naming-conventions/">Convention over configuration</a></li>
-  </ul>
-  </p>
-  </section>
+    <section class="slide">
+    <h2>Some things to note</h2>
+    <p>
+    <ul>
+      <li>Ember can generate a lot of code for you (in memory code).</li>
+      <li><a href="http://emberjs.com/guides/concepts/naming-conventions/">Convention over configuration</a></li>
+    </ul>
+    </p>
+    </section>
 
-  <section class="slide">
-  <h2>Demo app</h2>
-  <p>
-  <ul>
-    <li>List available cakes</li>
-    <li>Display individual details for each cake</li>
-    <li>User can add cakes to their chart</li>
-    <li>Chart's total price automatically updates</li>
-  </ul>
-  </p>
-  <p>
-  Start the app with
-  <code>
-    node server.js
-  </code>
-  </p>
-  </section>
+    <section class="slide">
+    <h2>Demo app</h2>
+    <p>
+    <ul>
+      <li>List available cakes</li>
+      <li>Display individual details for each cake</li>
+      <li>User can add cakes to their chart</li>
+      <li>Chart's total price automatically updates</li>
+    </ul>
+    </p>
+    <p>
+    Start the app with
+    <code>
+      node server.js
+    </code>
+    </p>
+    </section>
 
-  <section class="slide">
-  <h2>First steps</h2>
-  <p>
-  <ul>
-    <li>Create application</li>
-    <li>Make a route</li>
-    <li>Use a model</li>
-    <li>Define a controller</li>
-    <li>Implement a template</li>
-  </ul>
-  </p>
-  </section>
+    <section class="slide">
+    <h2>First steps</h2>
+    <p>
+    <ul>
+      <li>Create application</li>
+      <li>Make a route</li>
+      <li>Use a model</li>
+      <li>Define a controller</li>
+      <li>Implement a template</li>
+    </ul>
+    </p>
+    </section>
 
-  <section class="slide">
-  <h2>debugging</h2>
-  <ul>
-    <li>Use the non-minified version of ember.</li>
-    <li>Refresh.</li>
-    <li><a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi">Ember inspector for chrome</a>.</li>
-    <li> <code>{{debugger}}</code> and <code>{{controller}}</code>in a template.</li>
-    <li>Console.</li>
-  </ul>
-  </section>
+    <section class="slide">
+    <h2>debugging</h2>
+    <ul>
+      <li>Use the non-minified version of ember.</li>
+      <li>Refresh.</li>
+      <li><a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi">Ember inspector for chrome</a>.</li>
+      <li> <code>{{debugger}}</code> and <code>{{controller}}</code>in a template.</li>
+      <li>Console.</li>
+    </ul>
+    </section>
 
-  <section class="slide">
-  <h2>Using a model</h2>
-  <ul>
-  <li>Asynchronous routing if the model returns a promise.</li>
-  <li>If promise is rejected, an error event is emited and bubble up to the
-  ApplicationRoute.</li>
-  </ul>
-  </section>
+    <section class="slide">
+    <h2>Using a model</h2>
+    <ul>
+      <li>Asynchronous routing if the model returns a promise.</li>
+      <li>If promise is rejected, an error event is emited and bubble up to the
+      ApplicationRoute.</li>
+    </ul>
+    </section>
 
-  <section class="slide">
-  <h2>Route configuration</h2>
-  <ul>
-    <li>Redirection</li>
-    <li> <code>setupController</code></li>
-  </ul>
-  </section>
+    <section class="slide">
+    <h2>Route configuration</h2>
+    <ul>
+      <li>Redirection</li>
+      <li> <code>setupController</code></li>
+    </ul>
+    </section>
 
-  <section class="slide">
-  <h2>Master/Detail pattern</h2>
-  <ul>
-    <li>UI is nested -&gt; Routes should be nested too</li>
-    <li>Define nested routes (resources)</li>
-    <li>Use nested outlets</li>
-    <li>ObjectController</li>
-  </ul>
-  </section>
+    <section class="slide">
+    <h2>Master/Detail pattern</h2>
+    <ul>
+      <li>UI is nested -&gt; Routes should be nested too</li>
+      <li>Define nested routes (resources)</li>
+      <li>Use nested outlets</li>
+      <li>ObjectController</li>
+    </ul>
+    </section>
 
-  <section class="slide">
-  <h2>Different controllers</h2>
-  <p class="delayed">
-  <code>Ember.Controller</code>: Proxy to its own properties. <br />
-  A template asking for <code>{{cakeName}}</code> would receive
-  <code>MyController.cakeName</code>
-  </p>
+    <section class="slide">
+    <h2>Different controllers</h2>
+    <p class="delayed">
+    <code>Ember.Controller</code>: Proxy to its own properties. <br />
+    A template asking for <code>{{cakeName}}</code> would receive
+    <code>MyController.cakeName</code>
+    </p>
 
-  <br />
+    <br />
 
-  <p class="delayed">
-  <code>Ember.ObjectController</code>: Proxy to its own properties first
-  and then to its <code>model</code> property.
-  In a template <code>{{name}}</code> would receive <code>MyController.name</code> if
-  it exists and else <code>MyController.model.name</code>.
-  </p>
+    <p class="delayed">
+    <code>Ember.ObjectController</code>: Proxy to its own properties first
+    and then to its <code>model</code> property.
+    In a template <code>{{name}}</code> would receive <code>MyController.name</code> if
+    it exists and else <code>MyController.model.name</code>.
+    </p>
 
-  <br />
+    <br />
 
-  <p class="delayed">
-  <code>Ember.ArrayController</code>: Same as an ObjectController, but assumes its
-  model is an array. Provide the <code>each</code> helper and has a <code>length</code>
-  property.
-  </p>
-  </section>
+    <p class="delayed">
+    <code>Ember.ArrayController</code>: Same as an ObjectController, but assumes its
+    model is an array. Provide the <code>each</code> helper and has a <code>length</code>
+    property.
+    </p>
+    </section>
 
-  <section class="slide">
-  <h2>Implement the chart</h2>
-  <ul>
-    <li>Computed property.</li>
-    <li> <code>{{render}}</code> helper.</li>
-    <li>Custom handlebars helper.</li>
-    <li> <code>{{action}}</code> helper.</li>
-    <li>Dependencies between controllers.</li>
-  </ul>
-  </section>
+    <section class="slide">
+    <h2>Implement the chart</h2>
+    <ul>
+      <li>Computed property.</li>
+      <li> <code>{{render}}</code> helper.</li>
+      <li>Custom handlebars helper.</li>
+      <li> <code>{{action}}</code> helper.</li>
+      <li>Dependencies between controllers.</li>
+    </ul>
+    </section>
 
-  <section class="slide">
-  <h2>Handlebars helper: price</h2>
-  Format numbers: 1200 -&gt; "1 200 nt"
-  </section>
+    <section class="slide">
+    <h2>Handlebars helper: price</h2>
+    Format numbers: 1200 -&gt; "1 200 nt"
+    </section>
 
-  <section class="slide">
-  <h2>Implement an action</h2>
-  <ul>
-    <li>How to define an action on an element.</li>
-    <li>Where to handle the action.</li>
-    <li> <code>needs</code> to define controller's dependencies.</li>
-    <li> <code>Ember.Computed.alias</code></li>
-  </ul>
-  </section>
+    <section class="slide">
+    <h2>Implement an action</h2>
+    <ul>
+      <li>How to define an action on an element.</li>
+      <li>Where to handle the action.</li>
+      <li> <code>needs</code> to define controller's dependencies.</li>
+      <li> <code>Ember.Computed.alias</code></li>
+    </ul>
+    </section>
 
-  <section class="slide">
-  <h2>Wrap tips</h2>
-  <p>
-  If you find yourself doing something which requires significant configuration away
-  from the defaults, that's a sign you may be going in the wrong direction.
-  </p>
-  </section>
+    <section class="slide">
+    <h2>Wrap tips</h2>
+    <p>
+    If you find yourself doing something which requires significant configuration away
+    from the defaults, that's a sign you may be going in the wrong direction.
+    </p>
+    </section>
 
-</section>
+    <section class="slide">
+    <h2>Resources</h2>
+    <ul>
+      <li> <a href="http://emberjs.com/guides/">Official guides.</a></li>
+      <li> <a href="http://emberjs.com/api/">The api documentation.</a></li>
+      <li> <a href="http://emberwatch.com/">Ember watch</a></li>
+      <li>ORM: <a href="https://github.com/emberjs/data">Ember data</a> and
+      <a href="http://epf.io/">epf</a>
+      <li> <a href="http://eviltrout.com/">Blog about discourse and Ember.</a></li>
+      </li>
+    </ul>
+    </section>
 
-<footer class="slide">
-	<h2>Thank you!</h2>
-	<p>Any questions ?</p>
-</footer>
+    </section>
 
-<script src="slideshow.js"></script>
+    <footer class="slide">
+    <h2>Thank you!</h2>
+    <p>Any questions ?</p>
+    </footer>
 
-<!-- Uncomment the plugins you need
-<script src="plugins/css-edit.js"></script>
-<script src="plugins/css-snippets.js"></script>
-<script src="plugins/css-controls.js"></script>
-<script src="plugins/code-highlight.js"></script>
--->
-<script>var slideshow = new SlideShow();</script>
-	
-</body>
+    <script src="slideshow.js"></script>
+
+    <!-- Uncomment the plugins you need
+    <script src="plugins/css-edit.js"></script>
+    <script src="plugins/css-snippets.js"></script>
+    <script src="plugins/css-controls.js"></script>
+    <script src="plugins/code-highlight.js"></script>
+    -->
+    <script>var slideshow = new SlideShow();</script>
+
+  </body>
 </html>
