@@ -51,6 +51,9 @@ App.ChartController = Ember.ArrayController.extend({
 });
 
 Ember.Handlebars.registerBoundHelper('price', function(val) {
+  if(val >= 1000) {
+    val = "" + Math.floor(val/1000) + " " + val % 1000;
+  }
   return val+" nt";
 });
 
