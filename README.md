@@ -1,6 +1,7 @@
 # Introduction to Ember.js
 This is a basic introduction to Ember.js for a [local meetup](http://www.meetup.com/javascript-enthusiasts/events/138068622/).
-The final app is in final/index.html.
+The final app is in final/index.html. If you want to redo the application you can use the
+files provided in the `boilerplate` folder.
 To run the server:
 
 ```javascript
